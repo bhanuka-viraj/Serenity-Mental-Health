@@ -2,11 +2,13 @@ package edu.ijse.therapycenter.dao.custom.impl;
 
 import edu.ijse.therapycenter.config.FactoryConfiguration;
 import edu.ijse.therapycenter.dao.custom.PaymentDAO;
+import edu.ijse.therapycenter.entity.Patient;
 import edu.ijse.therapycenter.entity.Payment;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import java.sql.SQLException;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -48,7 +50,12 @@ public class PaymentDAOImpl implements PaymentDAO {
 
     @Override
     public List<Payment> getAll() {
-        return List.of();
+        try (Session session = FactoryConfiguration.getInstance().getSession()) {
+            return session.createQuery("FROM Payment WHERE status = 'Pending'", Payment.class).list();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return Collections.emptyList();
+        }
     }
 
     @Override
@@ -86,4 +93,35 @@ public class PaymentDAOImpl implements PaymentDAO {
     public boolean exist(String id) throws SQLException, ClassNotFoundException {
         return false;
     }
+
+    @Override
+    public boolean completePayment(String paymentId) {
+        Transaction transaction = null;
+
+        try (Session session = FactoryConfiguration.getInstance().getSession()) {
+            transaction = session.beginTransaction();
+
+            Payment payment = session.get(Payment.class, paymentId);
+
+            if (payment != null) {
+                payment.setStatus("Complete");
+
+                session.merge(payment);
+
+                transaction.commit();
+                return true;
+            } else {
+                return false;
+            }
+
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+
 }

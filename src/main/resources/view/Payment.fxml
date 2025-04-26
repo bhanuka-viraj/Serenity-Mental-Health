@@ -2,7 +2,6 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -13,7 +12,7 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #f5f5f5;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.therapycenter.controller.PaymentController">
     <children>
-        <VBox layoutX="1.0" prefHeight="600.0" prefWidth="800.0" spacing="20.0">
+        <VBox layoutX="-13.0" prefHeight="600.0" prefWidth="800.0" spacing="20.0">
             <padding>
                 <Insets bottom="20.0" left="30.0" right="30.0" top="20.0" />
             </padding>
@@ -76,18 +75,17 @@
                             <children>
                                 <HBox alignment="CENTER_LEFT" spacing="10.0">
                                     <children>
-                                        <Label prefHeight="17.0" prefWidth="66.0" text="Patient:" textFill="#2c3e50">
+                                        <Label prefHeight="17.0" prefWidth="66.0" text="Patient ID:" textFill="#2c3e50">
                                             <font>
                                                 <Font name="System Bold" size="12.0" />
                                             </font>
                                         </Label>
-                                        <ChoiceBox fx:id="selectPatient" prefHeight="30.0" prefWidth="220.0" />
-                              <Button mnemonicParsing="false" onAction="#petientSelectOnAction" prefHeight="25.0" prefWidth="60.0" text="Select" />
+                              <Label fx:id="lblPatient" text="Patient" />
                                     </children>
                                 </HBox>
                                 <HBox alignment="CENTER_LEFT" spacing="10.0">
                                     <children>
-                                        <Label prefHeight="17.0" prefWidth="65.0" text="Session:" textFill="#2c3e50">
+                                        <Label prefHeight="17.0" prefWidth="65.0" text="Session ID:" textFill="#2c3e50">
                                             <font>
                                                 <Font name="System Bold" size="12.0" />
                                             </font>
@@ -133,11 +131,12 @@
                 <!-- Payment Records Table -->
                 <TableView fx:id="tblPayments" onMouseClicked="#paymentSelectOnAction" prefHeight="210.0" prefWidth="740.0" VBox.vgrow="ALWAYS">
                     <columns>
-                        <TableColumn fx:id="colPaymentId" prefWidth="100.0" text="Payment ID" />
-                        <TableColumn fx:id="colAmount" prefWidth="144.00001525878906" text="Amount" />
-                        <TableColumn fx:id="colDate" prefWidth="138.66668701171875" text="Date" />
-                        <TableColumn fx:id="colPatient" prefWidth="173.99993896484375" text="Patient" />
-                        <TableColumn fx:id="colSession" prefWidth="182.0" text="Session ID" />
+                        <TableColumn fx:id="colPaymentId" prefWidth="92.66668319702148" text="Payment ID" />
+                        <TableColumn fx:id="colAmount" prefWidth="143.33332061767578" text="Amount" />
+                        <TableColumn fx:id="colDate" prefWidth="116.66665649414062" text="Date" />
+                        <TableColumn fx:id="colPatient" prefWidth="128.66668701171875" text="Patient" />
+                        <TableColumn fx:id="colSession" prefWidth="104.00006103515625" text="Session ID" />
+                  <TableColumn fx:id="colStatus" maxWidth="429.3333435058594" prefWidth="154.0" text="Status" />
                     </columns>
                     <VBox.margin>
                         <Insets />
