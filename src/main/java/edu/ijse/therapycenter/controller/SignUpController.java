@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
@@ -92,8 +93,14 @@ public class SignUpController implements Initializable {
             alert.setHeaderText(null);
             alert.setContentText("User sign up failed");
             alert.show();
-            return;
         }
+    }
+
+
+    @FXML
+    void signInLinkOnAction(MouseEvent event) throws IOException {
+        mainAnchor.getChildren().clear();
+        mainAnchor.getChildren().add(FXMLLoader.load(getClass().getResource("/view/LogIn.fxml")));
     }
 
     @Override

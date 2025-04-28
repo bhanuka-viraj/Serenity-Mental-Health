@@ -5,6 +5,8 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -15,7 +17,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="LogInAnchor" fx:id="mainAnchor" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #f5f5f5;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.therapycenter.controller.LogInController">
+<AnchorPane id="LogInAnchor" fx:id="mainAnchor" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #f5f5f5;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.therapycenter.controller.LogInController">
    <children>
       <!-- Left side decorative panel -->
       <Rectangle height="600.0" width="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -24,12 +26,12 @@
                <stops>
                   <Stop>
                      <color>
-                        <Color red="0.2" green="0.6" blue="0.8" />
+                        <Color red="0.20000000298023224" green="0.6000000238418579" blue="0.800000011920929" />
                      </color>
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="0.4" green="0.3" blue="0.8" />
+                        <Color red="0.41960784792900085" green="0.2980392277240753" blue="0.47843137383461" />
                      </color>
                   </Stop>
                </stops>
@@ -38,9 +40,9 @@
       </Rectangle>
 
       <!-- Therapy center logo/branding text -->
-      <Text fill="WHITE" layoutX="120.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Therapy Center">
+      <Text fill="WHITE" layoutX="82.0" layoutY="412.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Serenity" textAlignment="CENTER" wrappingWidth="336.70196533203125">
          <font>
-            <Font name="Arial Bold" size="42.0" />
+            <Font name="Gabriola" size="74.0" />
          </font>
          <effect>
             <DropShadow height="5.0" radius="2.0" width="5.0">
@@ -51,9 +53,9 @@
          </effect>
       </Text>
 
-      <Text fill="WHITE" layoutX="123.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0">
+      <Text fill="WHITE" layoutX="167.0" layoutY="442.0" strokeType="OUTSIDE" strokeWidth="0.0" text="mental health thrapy centre" wrappingWidth="158.40003967285156">
          <font>
-            <Font name="Arial" size="18.0" />
+            <Font name="Harlow Solid Italic" size="14.0" />
          </font>
       </Text>
 
@@ -120,5 +122,10 @@
             </HBox>
          </children>
       </VBox>
+      <ImageView fitHeight="252.0" fitWidth="219.0" layoutX="141.0" layoutY="109.0">
+         <image>
+            <Image url="@../../../../../../Downloads/chakras-310119_640.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

@@ -11,11 +11,11 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.therapycenter.controller.AdminDashController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.therapycenter.controller.AdminDashController">
     <children>
-        <VBox prefHeight="600.0" prefWidth="200.0" style="-fx-background-color: #2c3e50;">
+        <VBox prefHeight="600.0" prefWidth="200.0" style="-fx-background-color: #6B4C7A;">
             <children>
-                <HBox alignment="CENTER" prefHeight="70.0" style="-fx-background-color: #1a2530;">
+                <HBox alignment="CENTER" prefHeight="70.0" style="-fx-background-color: #3A2A4D;">
                     <children>
                         <Label text="Therapy Center" textFill="WHITE">
                             <font>
@@ -79,7 +79,7 @@
                         </Button>
                     </children>
                 </VBox>
-                <HBox alignment="CENTER_LEFT" prefHeight="50.0" style="-fx-background-color: #1a2530;">
+                <HBox alignment="CENTER_LEFT" prefHeight="59.0" prefWidth="200.0" style="-fx-background-color: #3A2A4D;">
                     <children>
                         <Region prefHeight="50.0" prefWidth="15.0" />
                         <VBox>
@@ -89,7 +89,10 @@
                                         <Font name="System Bold" size="12.0" />
                                     </font>
                                 </Label>
-                        <Button mnemonicParsing="false" onAction="#logOut" prefHeight="25.0" prefWidth="65.0" style="-fx-background-color: #4a6bff; -fx-background-radius: 5;" text="LogOut" />
+                        <Button mnemonicParsing="false" onAction="#logOut" prefHeight="11.0" prefWidth="66.0" style="-fx-background-color: #4a6bff; -fx-background-radius: 5;" text="LogOut">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin></Button>
                             </children>
                         </VBox>
                     </children>
@@ -104,6 +107,6 @@
             </effect>
         </VBox>
         <AnchorPane fx:id="loadPageAnchor" layoutX="200.0" prefHeight="600.0" prefWidth="800.0" />
-        
+
     </children>
 </AnchorPane>
